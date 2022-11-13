@@ -4,3 +4,10 @@ export const getItems = (search) => {
     .catch((err) => console.log(err))
   return res
 }
+
+export const getItem = (id) => {
+  const res = fetch(`http://localhost:3000/api/items/${id}`)
+    .then((res) => res.json())
+    .catch((err) => console.log(err))
+  return res
+}
