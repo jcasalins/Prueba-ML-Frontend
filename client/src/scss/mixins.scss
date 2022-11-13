@@ -1,0 +1,6 @@
+@mixin mxs-fz($sizeValue) {
+  $pxValue: $sizeValue;
+  $remValue: calc($sizeValue / 16);
+  font-size: #{$pxValue}px;
+  font-size: #{$remValue}rem;
+}
