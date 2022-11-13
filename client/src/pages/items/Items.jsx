@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useSearchParams, Navigate, Link } from 'react-router-dom'
 import { getItems } from '../../services/items'
+import { FaShippingFast } from 'react-icons/fa'
 
 function Items() {
   const [searchParams] = useSearchParams()
@@ -42,14 +43,14 @@ function Items() {
               <div key={index} className="grid item p-15">
                 <div className="item-image grid">
                   <Link to={`/items/${item.id}`}>
-                  <img
-                    src={
-                      item.picture
-                        ? item.picture
-                        : 'https://http2.mlstatic.com/frontend-assets/ui-navigation/5.14.1/mercadolibre/logo__large_plus.png'
-                    }
-                    alt={item.title}
-                  />
+                    <img
+                      src={
+                        item.picture
+                          ? item.picture
+                          : 'https://http2.mlstatic.com/frontend-assets/ui-navigation/5.14.1/mercadolibre/logo__large_plus.png'
+                      }
+                      alt={item.title}
+                    />
                   </Link>
                 </div>
                 <div className="item-info">
@@ -65,8 +66,17 @@ function Items() {
                     ) : (
                       '.00'
                     )}
+                    {item.free_shipping ? (
+                      <span className="item-shipping">
+                        <FaShippingFast/>
+                      </span>
+                    ) : (
+                      ''
+                    )}
                   </div>
-                  <div className="item-title"><Link to={`/items/${item.id}`}>{item.title}</Link></div>
+                  <div className="grid item-title">
+                    <Link to={`/items/${item.id}`}>{item.title}</Link>
+                  </div>
                 </div>
               </div>
             )

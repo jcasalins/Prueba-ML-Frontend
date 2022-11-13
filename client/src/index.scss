@@ -1,4 +1,4 @@
-@import "./scss/reset.scss";
+@import './scss/reset.scss';
 
 main {
   background-color: $text-gray-2;
@@ -76,9 +76,9 @@ main {
 
 /***** Header ****/
 header {
-    margin-bottom: -59px;
-    position: relative;
-    z-index: 2;
+  margin-bottom: -59px;
+  position: relative;
+  z-index: 2;
 }
 .nav-header {
   grid-template-columns: 39px 1fr;
@@ -88,7 +88,7 @@ header {
 .logo-ML {
   width: 39px;
   height: 39px;
-  background-image: url("/logo__small.png");
+  background-image: url('/logo__small.png');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -124,7 +124,7 @@ header {
     outline: 0;
   }
   &::before {
-    content: "";
+    content: '';
     display: block;
     height: 26px;
     border-left: 1px solid #e6e6e6;
@@ -143,7 +143,7 @@ header {
   color: $text-gray;
   text-decoration: none;
   &::after {
-    content: ">";
+    content: '>';
     margin-right: 5px;
     margin-left: 5px;
   }
@@ -151,7 +151,7 @@ header {
     font-weight: bold;
     &::after {
       display: none;
-      content: "";
+      content: '';
     }
   }
 }
@@ -176,14 +176,22 @@ header {
       @include mxs-fz(24);
       font-weight: 600;
       color: $text-color;
-      margin-bottom: 15px;      
+      margin-bottom: 15px;
+      .item-shipping {
+        color: $text-green;
+        margin-left: 0.313rem;
+        svg {
+          padding-top: 0.313rem;
+        }
+      }
     }
     .item-title {
+      grid-template-columns: 3fr 1fr;
       @include mxs-fz(18);
       font-weight: 400;
       color: $text-color;
       margin-bottom: 15px;
-      a{
+      a {
         text-decoration: none;
         color: $text-color;
       }
