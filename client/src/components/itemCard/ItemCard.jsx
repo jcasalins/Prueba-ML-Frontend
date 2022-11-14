@@ -3,7 +3,7 @@ import { FaShippingFast } from 'react-icons/fa'
 
 function ItemCard({ item }) {
   return (
-    <div className="grid item p-15">
+    <div className="grid item-card p-15">
       <div className="item-image grid">
         <Link to={`/items/${item.id}`}>
           <img

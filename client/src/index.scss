@@ -7,6 +7,7 @@ main {
 }
 .container {
   width: 100%;
+  max-width: 1184px; /* puede que lo borre */
   @media (min-width: 640px) {
     width: 640px;
   }
@@ -54,6 +55,11 @@ main {
   padding-right: 0.9375rem;
 }
 
+.px-20 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
 .py-5 {
   padding-top: 0.3125rem;
   padding-bottom: 0.3125rem;
@@ -72,6 +78,16 @@ main {
 .py-20 {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
+}
+
+.py-25 {
+  padding-top: 1.5625rem;
+  padding-bottom: 1.5625rem;
+}
+
+.py-40 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 
 /***** Header ****/
@@ -157,7 +173,7 @@ header {
 }
 
 /*** Items ***/
-.item {
+.item-card {
   grid-template-columns: 0.5fr 2fr 1fr;
   gap: 15px;
   .item-image {
@@ -195,6 +211,42 @@ header {
         text-decoration: none;
         color: $text-color;
       }
+    }
+  }
+}
+
+/*** item-details ***/
+.item-details {
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    'image info'
+    'description info';
+  gap: 15px;
+  .item-image {
+    grid-area: image;
+    text-align: center;
+    img {
+      height: auto;
+      object-fit: contain;
+    }
+  }
+  .item-info {
+    grid-area: info;
+  }
+  .item-description {
+    grid-area: description;
+    h2 {
+      @include mxs-fz(24);
+      font-weight: 600;
+      color: $text-color;
+      margin-bottom: 15px;
+    }
+    p {
+      @include mxs-fz(18);
+      color: $text-color;
+      font-weight: 400;
+      margin-bottom: 15px;
     }
   }
 }
