@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { AiOutlineSearch } from "react-icons/ai";
+import './search.scss'
 
 function Search() {
   const [search, setSearch] = useState('')

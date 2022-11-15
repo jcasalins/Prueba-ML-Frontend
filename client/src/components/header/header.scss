@@ -1,5 +1,14 @@
 @import '../../scss/variables.scss';
 
+/***** Header ****/
 header {
     background-color: $base-color;
-}
+    margin-bottom: -59px;
+    position: relative;
+    z-index: 2;
+  }
+  .nav-header {
+    grid-template-columns: 53px 1fr;
+    gap: 15px;
+  }
+  

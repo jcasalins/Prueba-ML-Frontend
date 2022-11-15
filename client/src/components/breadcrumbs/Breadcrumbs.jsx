@@ -1,3 +1,4 @@
+import './breadcrumbs.scss'
 function Breadcrumbs({ categories }) {
   return (
     <div className="breadcrumbs py-15">

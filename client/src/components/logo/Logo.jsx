@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-
+import './logo.scss'
 function Logo() {
   return (
     <div className="grid content-logo-ML">

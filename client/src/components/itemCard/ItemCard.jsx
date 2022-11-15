@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { formatPrice } from '../../utils/converter'
+import './itemCard.scss'
 
 function ItemCard({ item }) {
   return (

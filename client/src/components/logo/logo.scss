@@ -1,0 +1,16 @@
+@import '../../scss/mixins.scss';
+/*** Logo ***/
+.content-logo-ML {
+    align-items: center;
+  }
+  .logo-ML {
+    width: 53px;
+    height: 36px;
+    background-image: url('../../assets/Logo_ML.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    overflow: hidden;
+    text-indent: -9999px;
+    @include image-2x('../../assets/Logo_ML@2x.png.png.png', 53px, 36px);
+  }

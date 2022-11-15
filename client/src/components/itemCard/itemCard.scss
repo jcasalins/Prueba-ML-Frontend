@@ -1,0 +1,59 @@
+@import '../../scss/variables.scss';
+@import '../../scss/mixins.scss';
+/*** Items ***/
+.item-card {
+  grid-template-columns: 0.5fr 2fr 1fr;
+  gap: 15px;
+  .item-image {
+    justify-content: center;
+    img {
+      width: 90px;
+      height: auto;
+      object-fit: contain;
+      @media (min-width: 640px) {
+        width: 180px;
+      }
+    }
+  }
+  .item-info {
+    padding-top: 0;
+    .item-price {
+      @include mxs-fz(24);
+      font-weight: 600;
+      color: $text-color;
+      margin-bottom: 0;
+      .item-shipping {
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        background-image: url('../../assets/ic_shipping.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        margin-left: 5px;
+        @include image-2x('../../assets/ic_shipping@2x.png.png.png', 18px, 18px);
+      }
+    }
+    .item-title {
+      grid-template-columns: 3fr 1fr;
+      @include mxs-fz(18);
+      font-weight: 400;
+      color: $text-color;
+      a {
+        text-decoration: none;
+        color: $text-color;
+      }
+    }
+    @media (min-width: 640px) {
+      padding-top: 1.25rem;
+      .item-price {
+        margin-bottom: 15px;
+      }
+    }
+  }
+  .item-location {
+    @include mxs-fz(14);
+    color: $text-color-op-1;
+    padding-top: 2.5rem;
+  }
+}

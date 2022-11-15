@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import { translateCondition, formatPrice } from '../../utils/converter'
 import Button from '../button/Button'
+import './itemDetails.scss'
 function ItemDetails({ item }) {
   return (
     <div className="item bg-white">

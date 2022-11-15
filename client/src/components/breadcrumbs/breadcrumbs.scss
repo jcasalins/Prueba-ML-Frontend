@@ -1,0 +1,24 @@
+@import '../../scss/variables.scss';
+@import '../../scss/mixins.scss';
+/*** BreadCrumbs ***/
+.breadcrumbs {
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+.breadcrumb {
+  @include mxs-fz(14);
+  color: $text-gray;
+  text-decoration: none;
+  &::after {
+    content: '>';
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+  &:last-child {
+    font-weight: bold;
+    &::after {
+      display: none;
+      content: '';
+    }
+  }
+}
