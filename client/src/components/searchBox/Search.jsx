@@ -21,9 +21,7 @@ function Search() {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
-          <button className="btn-search py-5">
-            <AiOutlineSearch className="icon-search" />
-          </button>
+          <button className="btn-search py-5">Buscar</button>
         </div>
       </form>
     </div>

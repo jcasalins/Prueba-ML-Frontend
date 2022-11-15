@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import { translateCondition, formatPrice } from '../../utils/converter'
 function ItemDetails({ item }) {
   return (
     <div className="item bg-white">
@@ -8,16 +9,15 @@ function ItemDetails({ item }) {
         </div>
         <div className="item-info">
           <div className="item-condition">
-            <span className="item-condition-text">Nuevo</span>
-            <span className="item-sold-quantity"> - 0 vendidos</span>
+            <span className="item-condition-text">{ translateCondition(item.condition)}</span>
+            <span className="item-sold-quantity"> - { item.sold_quantity > 1 ? item.sold_quantity + ' vendidos' : item.sold_quantity + ' vendido' }</span>
           </div>
           <div className="item-title">
             <h1>{item.title}</h1>
           </div>
           <div className="item-price">
-            <span className="item-price-currency">$</span>
-            <span className="item-price-amount">0</span>
-            <span className="item-price-decimals">.00</span>
+            <span className="item-price-amount">{ formatPrice( item.price.amount, item.price.currency )}</span>
+            <sup className="item-price-decimals">{ item.price.decimals !== 0 ? item.price.decimals : '00' }</sup>
           </div>
           <div className="item-buy">
             <button className="item-buy-button">Comprar</button>
@@ -25,7 +25,7 @@ function ItemDetails({ item }) {
         </div>
         <div className="item-description">
           <h2>Descripción del producto</h2>
-          <p>{item.description}</p>
+          <p dangerouslySetInnerHTML={{ __html: item.description.replace(/\n/g, '<br />') }}></p>
         </div>
       </div>
     </div>

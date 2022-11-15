@@ -97,19 +97,23 @@ header {
   z-index: 2;
 }
 .nav-header {
-  grid-template-columns: 39px 1fr;
+  grid-template-columns: 53px 1fr;
   gap: 15px;
 }
 /*** Logo ***/
+.content-logo-ML {
+  align-items: center;
+}
 .logo-ML {
-  width: 39px;
-  height: 39px;
-  background-image: url('/logo__small.png');
+  width: 53px;
+  height: 36px;
+  background-image: url('./assets/Logo_ML.png');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
   overflow: hidden;
   text-indent: -9999px;
+  @include image-2x('./assets/Logo_ML@2x.png.png.png', 53px, 36px);
 }
 /*** Form ***/
 .form-search {
@@ -129,12 +133,17 @@ header {
 }
 .btn-search {
   border-radius: 0 2px 2px 0;
+  background-image: url('./assets/ic_Search.png');
+  background-repeat: no-repeat;
+  background-position: center;
   background-color: #fff;
   border: 0;
   height: 39px;
   @include mxs-fz(24);
   color: $text-gray;
   position: relative;
+  overflow: hidden;
+  text-indent: -9999%;
   &:focus {
     border: 0;
     outline: 0;
@@ -147,6 +156,7 @@ header {
     position: absolute;
     top: 6.5px;
   }
+  @include image-2x('./assets/ic_Search@2x.png.png.png', 18px, 18px);
 }
 
 /*** BreadCrumbs ***/
@@ -244,7 +254,7 @@ header {
     }
     p {
       @include mxs-fz(18);
-      color: $text-color;
+      color: $text-gray;
       font-weight: 400;
       margin-bottom: 15px;
     }
