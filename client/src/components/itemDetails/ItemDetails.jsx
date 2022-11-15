@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import { translateCondition, formatPrice } from '../../utils/converter'
+import Button from '../button/Button'
 function ItemDetails({ item }) {
   return (
     <div className="item bg-white">
@@ -12,7 +13,7 @@ function ItemDetails({ item }) {
             <span className="item-condition-text">{ translateCondition(item.condition)}</span>
             <span className="item-sold-quantity"> - { item.sold_quantity > 1 ? item.sold_quantity + ' vendidos' : item.sold_quantity + ' vendido' }</span>
           </div>
-          <div className="item-title">
+          <div className="grid item-title">
             <h1>{item.title}</h1>
           </div>
           <div className="item-price">
@@ -20,7 +21,7 @@ function ItemDetails({ item }) {
             <sup className="item-price-decimals">{ item.price.decimals !== 0 ? item.price.decimals : '00' }</sup>
           </div>
           <div className="item-buy">
-            <button className="item-buy-button">Comprar</button>
+            <Button />
           </div>
         </div>
         <div className="item-description">

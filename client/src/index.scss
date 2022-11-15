@@ -132,6 +132,7 @@ header {
   }
 }
 .btn-search {
+  cursor: pointer;
   border-radius: 0 2px 2px 0;
   background-image: url('./assets/ic_Search.png');
   background-repeat: no-repeat;
@@ -193,22 +194,27 @@ header {
       height: auto;
       object-fit: contain;
       @media (min-width: 640px) {
-        width: 160px;
+        width: 180px;
       }
     }
   }
   .item-info {
+    padding-top: 1.25rem;
     .item-price {
       @include mxs-fz(24);
       font-weight: 600;
       color: $text-color;
       margin-bottom: 15px;
       .item-shipping {
-        color: $text-green;
-        margin-left: 0.313rem;
-        svg {
-          padding-top: 0.313rem;
-        }
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        background-image: url('./assets/ic_shipping.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        margin-left: 5px;
+        @include image-2x('./assets/ic_shipping@2x.png.png.png', 18px, 18px);
       }
     }
     .item-title {
@@ -243,20 +249,79 @@ header {
   }
   .item-info {
     grid-area: info;
+    .item-condition {
+      @include mxs-fz(14);
+      color: rgba(0, 0, 0, 0.55);
+      margin-bottom: 0.9375rem;
+    }
+    .item-title {
+      grid-template-columns: 1fr 0.5fr;      
+      margin-bottom: 1.875rem;      
+      h1 {
+        @include mxs-fz(24);
+        font-weight: 600;
+        line-height: 1.18;
+        color: rgba(0, 0, 0, 0.9);
+      }
+    }
+    .item-price{
+      @include mxs-fz(36);
+      line-height: 1.17;
+      font-weight: 400;
+      color: rgba(0,0,0,.9);
+      sup {
+        display: inline-block;
+        position: relative;
+        top: 3px;
+        @include mxs-fz(24);
+        line-height: 4px;
+        font-weight: 400;
+        color: rgba(0,0,0,.9);
+        margin-left: 5px;
+      }
+    }
+    .item-buy {
+      padding-top: 3.375rem;
+    }
   }
   .item-description {
     grid-area: description;
+    padding-top: 10rem;
     h2 {
       @include mxs-fz(24);
       font-weight: 600;
       color: $text-color;
-      margin-bottom: 15px;
+      margin-bottom: 1.375rem;
     }
     p {
       @include mxs-fz(18);
       color: $text-gray;
       font-weight: 400;
-      margin-bottom: 15px;
+    }
+  }
+}
+
+/*** boton comprar ***/
+.btn {
+  width: 100%;
+  height: 2.75rem;
+  border: 0;
+  border-radius: 4px;
+  background-color: $base-color;
+  cursor: pointer;
+  &.mx-w-247 {
+    max-width: 247px;
+  }
+  &.btn-primary {
+    color: #fff;
+    font-weight: 600;
+    @include mxs-fz(16);
+    line-height: normal;
+    text-align: center;
+    text-decoration: none;
+    background: $blue;
+    &:hover {
+      background: $blue-hover;
     }
   }
 }

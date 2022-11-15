@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { FaShippingFast } from 'react-icons/fa'
+import { formatPrice } from '../../utils/converter'
 
 function ItemCard({ item }) {
   return (
@@ -18,17 +18,14 @@ function ItemCard({ item }) {
       </div>
       <div className="item-info">
         <div className="item-price">
-          <span className="item-price-currency">$</span>
-          <span className="item-price-amount">{item.price.amount}</span>
-          {item.price.decimals !== 0 ? (
+          <span className="item-price-amount">{formatPrice(item.price.amount, item.price.currency)}</span>
+          {/* {item.price.decimals !== 0 ? (
             <span className="item-price-decimals">.{item.price.decimals}</span>
           ) : (
             '.00'
-          )}
+          )} */}
           {item.free_shipping ? (
-            <span className="item-shipping">
-              <FaShippingFast />
-            </span>
+            <span className="item-shipping"></span>
           ) : (
             ''
           )}
@@ -37,6 +34,7 @@ function ItemCard({ item }) {
           <Link to={`/items/${item.id}`}>{item.title}</Link>
         </div>
       </div>
+      <div className="item-location"></div>
     </div>
   )
 }
