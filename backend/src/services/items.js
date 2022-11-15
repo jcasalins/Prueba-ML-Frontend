@@ -6,8 +6,11 @@ items.author = {
 }
 
 items.getItemsApi = async (search) => {
+  const params = {}
+  params.limit = 4
+  if (search && search !== '') params.q = search
   const mlq = await axiosInstance
-    .get(`/sites/MLA/search?q=${search}&limit=4`)
+    .get('/sites/MLA/search', { params })
     .then((res) => res.data.results)
     .catch((err) => {
       return { error: err.message }
