@@ -16,7 +16,7 @@ function Search() {
         <div className="grid form-search">
           <input
             type="text"
-            placeholder="Buscar productos, marcas y más..."
+            placeholder="Nunca dejes de buscar"
             className="input-search p-10"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
