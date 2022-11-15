@@ -13,7 +13,10 @@ items.getItemsApi = async (search) => {
     .get('/sites/MLA/search', { params })
     .then((res) => res.data.results)
     .catch((err) => {
-      return { error: err.message }
+      return {
+        status: err.status,
+        message: err.message
+      }
     })
   return mlq || []
 }
@@ -23,7 +26,10 @@ items.getCategories = async (search) => {
     .get(`/categories/${search}`)
     .then((res) => res.data.path_from_root)
     .catch((err) => {
-      return { error: err.message }
+      return {
+        status: err.status,
+        message: err.message
+      }
     })
   const categories = mlq.map((category) => category.name)
   return categories
@@ -34,7 +40,10 @@ items.getItemById = async (id) => {
     .get(`/items/${id}`)
     .then((res) => res.data)
     .catch((err) => {
-      return { error: err.message }
+      return {
+        status: err.status,
+        message: err.message
+      }
     })
   return mlq
 }
@@ -44,7 +53,10 @@ items.getItemDescription = async (id) => {
     .get(`/items/${id}/description`)
     .then((res) => res.data)
     .catch((err) => {
-      return { error: err.message }
+      return {
+        status: err.status,
+        message: err.message
+      }
     })
   return mlq
 }

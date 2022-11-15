@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { getItem } from '../services/items'
 function useItems(id) {
-  const [item, setItem] = useState({})
+  const [item, setItem] = useState(null)
   const [loading, setLoading] = useState(true)
   const [categories, setCategories] = useState([])
   useEffect(() => {
@@ -11,10 +11,8 @@ function useItems(id) {
       if (item) {
         setItem(item)
         setCategories(categories)
-        setLoading(false)
-      } else {
-        setLoading(true)
-      }
+      } 
+      setLoading(false)
     }
     fetchItem()
   }, [id])
