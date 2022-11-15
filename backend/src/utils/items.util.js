@@ -1,5 +1,6 @@
+import ENV from './env.utils.js'
 const items = {}
-
+const ML_URL = ENV.ML_URL_HTTPS
 items.author = {
   name: 'Jairo',
   lastname: 'Casalins'
@@ -7,7 +8,7 @@ items.author = {
 
 items.getItemsApi = async (search) => {
   const mlq = await fetch(
-    `https://api.mercadolibre.com/sites/MLA/search?q=${search}&limit=4`
+    `${ML_URL}/sites/MLA/search?q=${search}&limit=4`
   )
     .then((res) => res.json())
     .then((data) => data.results)
@@ -18,7 +19,7 @@ items.getItemsApi = async (search) => {
 }
 
 items.getCategories = async (search) => {
-  const mlq = await fetch(`https://api.mercadolibre.com/categories/${search}`)
+  const mlq = await fetch(`${ML_URL}/categories/${search}`)
     .then((res) => res.json())
     .then((data) => data.path_from_root)
     .catch((err) => {
@@ -30,7 +31,7 @@ items.getCategories = async (search) => {
 }
 
 items.getItemById = async (id) => {
-  const mlq = await fetch(`https://api.mercadolibre.com/items/${id}`)
+  const mlq = await fetch(`${ML_URL}/items/${id}`)
     .then((res) => res.json())
     .then((data) => data)
     .catch((err) => {
@@ -41,7 +42,7 @@ items.getItemById = async (id) => {
 
 items.getItemDescription = async (id) => {
   const mlq = await fetch(
-    `https://api.mercadolibre.com/items/${id}/description`
+    `${ML_URL}/items/${id}/description`
   )
     .then((res) => res.json())
     .catch((err) => {
