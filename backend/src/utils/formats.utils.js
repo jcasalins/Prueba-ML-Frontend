@@ -4,16 +4,13 @@ const formats = {}
 
 const searchBreadcrumb = async (items) => {
   const categoryIds = items.map((item) => item.category_id)
-  // count the number of times an element is repeated in an array
   const count = categoryIds.reduce((acc, el) => {
     acc[el] = (acc[el] || 0) + 1
     return acc
   }, {})
-  // get the most repeated element
   const mostRepeated = Object.keys(count).reduce((a, b) =>
     count[a] > count[b] ? a : b
   )
-  // get the categories from the most repeated element
   const categories = await utilItems.getCategories(mostRepeated)
   return categories
 }
@@ -36,7 +33,8 @@ formats.itemsList = async (search) => {
       },
       picture: item.thumbnail,
       condition: item.condition,
-      free_shipping: item.shipping.free_shipping
+      free_shipping: item.shipping.free_shipping,
+      address: item.address.state_name
     }
   })
   resutl.author = utilItems.author
