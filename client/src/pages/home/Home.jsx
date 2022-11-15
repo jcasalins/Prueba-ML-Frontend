@@ -1,8 +1,11 @@
-import React from 'react'
+
+import Main from '../../components/main/Main'
 
 function Home() {
   return (
-    <main className='h-screen'>Home</main>
+    <Main>
+      <h1>Home</h1>
+    </Main>
   )
 }
 

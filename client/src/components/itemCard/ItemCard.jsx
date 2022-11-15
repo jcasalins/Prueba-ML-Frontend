@@ -18,23 +18,16 @@ function ItemCard({ item }) {
       </div>
       <div className="item-info">
         <div className="item-price">
-          <span className="item-price-amount">{formatPrice(item.price.amount, item.price.currency)}</span>
-          {/* {item.price.decimals !== 0 ? (
-            <span className="item-price-decimals">.{item.price.decimals}</span>
-          ) : (
-            '.00'
-          )} */}
-          {item.free_shipping ? (
-            <span className="item-shipping"></span>
-          ) : (
-            ''
-          )}
+          <span className="item-price-amount">
+            {formatPrice(item.price.amount, item.price.currency)}
+          </span>
+          {item.free_shipping ? <span className="item-shipping"></span> : ''}
         </div>
         <div className="grid item-title">
           <Link to={`/items/${item.id}`}>{item.title}</Link>
         </div>
       </div>
-      <div className="item-location"></div>
+      <div className="item-location">{item.address}</div>
     </div>
   )
 }

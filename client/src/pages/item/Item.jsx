@@ -3,18 +3,18 @@ import { useParams } from 'react-router-dom'
 import useItem from '../../hooks/useItem'
 import Breadcrumbs from '../../components/breadcrumbs/Breadcrumbs'
 import ItemDetails from '../../components/itemDetails/ItemDetails'
+import Main from '../../components/main/Main'
+import Loading from '../../components/loading/Loading'
 
 function Item() {
   const { id } = useParams()
-  const { item, categories, loading } = useItem(id )
-  if (loading) return <main>Loading...</main>
+  const { item, categories, loading } = useItem(id)
+  if (loading) return <Main><Loading /></Main>
   return (
-    <main className="h-screen px-15">
-      <div className="container mx-auto">
-        <Breadcrumbs categories={categories} />
-        <ItemDetails item={item} />
-      </div>
-    </main>
+    <Main>
+      <Breadcrumbs categories={categories} />
+      <ItemDetails item={item} />
+    </Main>
   )
 }
 
