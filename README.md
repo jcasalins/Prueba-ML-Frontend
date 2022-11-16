@@ -1,4 +1,10 @@
-## Desafío:
+#Test Práctico - Frontend
+
+## Documentación
+1. [Servidor](/jcasalins/Prueba-ML-Frontend/tree/master/backend)
+2. [Cliente](/jcasalins/Prueba-ML-Frontend/tree/master/client)
+
+## Meta:
 La aplicación consta de tres componentes principales: la caja de búsqueda, la visualización de resultados, y la descripción del detalle del producto.
 
 Tenés que usar el siguiente stack tecnológico para construir la aplicación:
@@ -11,7 +17,7 @@ Tenés que usar el siguiente stack tecnológico para construir la aplicación:
   - Node >= 6
   - Express
 
-### Para resolverlo, te pedimos que tengas en cuenta:
+#### Para resolverlo, te pedimos que tengas en cuenta:
 
 - [x] Usabilidad
 - [x] SEO

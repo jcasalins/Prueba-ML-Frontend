@@ -17,7 +17,7 @@ Para poner en marcha el servidor ejecutamos el comando:
 ```shell
 npm start
 ```
-El servidor que ejecutandose en el URL [localhost:3000](http://localhost:3000)
+El servidor queda ejecutandose en el URL [localhost:3000](http://localhost:3000)
 
 Para detectar errores usamos el comando: 
 
