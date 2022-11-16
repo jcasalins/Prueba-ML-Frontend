@@ -42,6 +42,11 @@ main {
 .grid {
   display: grid;
 }
+
+.justify-center {
+  justify-content: center;
+}
+
 .p-10 {
   padding: 0.625rem;
 }

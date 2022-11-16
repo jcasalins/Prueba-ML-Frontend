@@ -6,7 +6,9 @@ function Home() {
     <>
       <SEO title='Home'/>
       <Main>
-        <h1>Home</h1>
+        <div className="grid justify-center py-40">
+          <h1>Mercado Libre - Donde comprar y vender de todo</h1>
+        </div>
       </Main>
     </>
   )
