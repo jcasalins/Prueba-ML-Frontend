@@ -1,4 +1,4 @@
-import axiosInstance from '../services/config.js'
+import axiosInstance from './axiosInstance.js'
 const items = {}
 items.author = {
   name: 'Jairo',
@@ -31,12 +31,11 @@ items.getCategories = async (search) => {
         message: err.message
       }
     })
-  const categories = mlq.map((category) => category.name)
-  return categories
+  return mlq.map((category) => category.name)
 }
 
 items.getItemById = async (id) => {
-  const mlq = await axiosInstance
+  return await axiosInstance
     .get(`/items/${id}`)
     .then((res) => res.data)
     .catch((err) => {
@@ -45,11 +44,10 @@ items.getItemById = async (id) => {
         message: err.message
       }
     })
-  return mlq
 }
 
 items.getItemDescription = async (id) => {
-  const mlq = await axiosInstance
+  return await axiosInstance
     .get(`/items/${id}/description`)
     .then((res) => res.data)
     .catch((err) => {
@@ -58,7 +56,6 @@ items.getItemDescription = async (id) => {
         message: err.message
       }
     })
-  return mlq
 }
 
 export default items

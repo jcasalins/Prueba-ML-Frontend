@@ -11,8 +11,7 @@ const searchBreadcrumb = async (items) => {
   const mostRepeated = Object.keys(count).reduce((a, b) =>
     count[a] > count[b] ? a : b
   )
-  const categories = await utilItems.getCategories(mostRepeated)
-  return categories
+  return await utilItems.getCategories(mostRepeated)
 }
 
 formats.itemsList = async (search) => {
