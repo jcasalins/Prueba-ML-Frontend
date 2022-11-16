@@ -9,7 +9,7 @@ import SEO from '../../components/SEO/Index'
 function Items() {
   const [searchParams] = useSearchParams()
   const search = searchParams.get('search')
-  if (!search) return <Navigate to="/" />
+  if (!search && search === '') return <Navigate to="/" />
   const title = search ? `${search}` : 'Mercado Libre'
   const { items, categories, loading } = useItems(search)
   if (loading) return <Main><Loading /></Main>

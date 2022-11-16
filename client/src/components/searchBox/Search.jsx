@@ -8,6 +8,7 @@ function Search() {
 
   const handleSubimit = (e) => {
     e.preventDefault()
+    if (search === '') return
     navigate(`/items?search=${search}`)
   }
   return (
