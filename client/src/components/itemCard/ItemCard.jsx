@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { formatPrice } from '../../utils/converter'
+import PropTypes from 'prop-types'
 import './itemCard.scss'
 
 function ItemCard({ item }) {
@@ -31,6 +32,10 @@ function ItemCard({ item }) {
       <div className="item-location">{item.address}</div>
     </div>
   )
+}
+
+ItemCard.prototype = {
+  item: PropTypes.object.isRequired
 }
 
 export default ItemCard

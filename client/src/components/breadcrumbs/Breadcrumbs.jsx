@@ -1,4 +1,5 @@
 import './breadcrumbs.scss'
+import PropTypes from 'prop-types'
 function Breadcrumbs({ categories }) {
   return (
     <div className="breadcrumbs py-15">
@@ -11,6 +12,10 @@ function Breadcrumbs({ categories }) {
       })}
     </div>
   )
+}
+
+Breadcrumbs.prototype = {
+  categories: PropTypes.array.isRequired,
 }
 
 export default Breadcrumbs

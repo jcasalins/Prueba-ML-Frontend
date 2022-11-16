@@ -1,10 +1,9 @@
 import PropTypes from 'prop-types'
 export function translateCondition(condition) {
   switch (condition) {
-    case 'new':
-      return 'Nuevo'
     case 'used':
       return 'Usado'
+    case 'new':
     default:
       return 'Nuevo'
   }
