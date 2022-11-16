@@ -2,7 +2,7 @@ import './itemNotFound.scss';
 function ItemNotFound() {
   return (
     <div className='box-notFound'>
-        <h1>No se encontró ningún item</h1>
+        <h1>No se encontró ningún Producto</h1>
     </div>
   )
 }

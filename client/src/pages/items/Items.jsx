@@ -4,18 +4,23 @@ import Main from '../../components/main/Main'
 import ItemsBox from '../../components/itemsBox/ItemsBox'
 import Loading from '../../components/loading/Loading'
 import useItems from '../../hooks/useItems'
+import SEO from '../../components/SEO/Index'
 
 function Items() {
   const [searchParams] = useSearchParams()
   const search = searchParams.get('search')
   if (!search) return <Navigate to="/" />
+  const title = search ? `${search}` : 'Mercado Libre'
   const { items, categories, loading } = useItems(search)
   if (loading) return <Main><Loading /></Main>
   return (
-    <Main>
-      <Breadcrumbs categories={categories} />
-      <ItemsBox items={items} />
-    </Main>
+    <>
+      <SEO title={title} />
+      <Main>
+        <Breadcrumbs categories={categories} />
+        <ItemsBox items={items} />
+      </Main>
+    </>
   )
 }
 

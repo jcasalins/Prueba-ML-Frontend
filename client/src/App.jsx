@@ -1,8 +1,11 @@
 import AppRoutes from './routes/Index'
+import { HeadProvider } from 'react-head'
 function App() {
   return (
     <>
-      <AppRoutes />
+      <HeadProvider>
+        <AppRoutes />
+      </HeadProvider>
     </>
   )
 }
