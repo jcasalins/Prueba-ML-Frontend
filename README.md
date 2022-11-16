@@ -1,8 +1,8 @@
 #Test Práctico - Frontend
 
 ## Documentación
-1. [Servidor](/jcasalins/Prueba-ML-Frontend/tree/master/backend)
-2. [Cliente](/jcasalins/Prueba-ML-Frontend/tree/master/client)
+1. [Servidor](/backend)
+2. [Cliente](/client)
 
 ## Meta:
 La aplicación consta de tres componentes principales: la caja de búsqueda, la visualización de resultados, y la descripción del detalle del producto.
