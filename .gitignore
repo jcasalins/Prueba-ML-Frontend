@@ -1,4 +1,6 @@
+backend/.scannerwork
 backend/node_modules
 client/node_modules
+client/.scannerwork
 client/dist
 

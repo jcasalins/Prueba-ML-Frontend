@@ -1,17 +1,18 @@
 import { useState, useEffect } from 'react'
 import { getItem } from '../services/items'
-function useItems(id) {
+function useItem(id) {
   const [item, setItem] = useState(null)
   const [loading, setLoading] = useState(true)
   const [categories, setCategories] = useState([])
   useEffect(() => {
     const fetchItem = async () => {
       const product = await getItem(id)
-      const { item, categories } = product
-      if (item) {
-        setItem(item)
-        setCategories(categories)
-      } 
+      const pItem = product.item
+      const pCategories = product.categories
+      if (pItem) {
+        setItem(pItem)
+        setCategories(pCategories)
+      }
       setLoading(false)
     }
     fetchItem()
@@ -19,4 +20,4 @@ function useItems(id) {
   return { item, categories, loading }
 }
 
-export default useItems
+export default useItem
